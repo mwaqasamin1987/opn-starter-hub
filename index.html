@@ -16,18 +16,20 @@
 
     header {
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: linear-gradient(135deg, #1a1f3c, #0b0f19);
     }
 
     h1 {
-      font-size: 40px;
+      font-size: 42px;
       margin-bottom: 10px;
     }
 
-    p {
+    .subtitle {
       color: #b0b0b0;
       font-size: 16px;
+      max-width: 600px;
+      margin: auto;
     }
 
     .container {
@@ -36,11 +38,34 @@
       padding: 40px 20px;
     }
 
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
     .card {
       background: #141a2e;
       padding: 20px;
-      margin: 15px 0;
-      border-radius: 10px;
+      border-radius: 12px;
+      border: 1px solid #222a45;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #4da3ff;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #ffffff;
+    }
+
+    p {
+      color: #b0b0b0;
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     a {
@@ -51,10 +76,20 @@
     .btn {
       display: inline-block;
       margin-top: 10px;
-      padding: 10px 15px;
+      padding: 10px 14px;
       background: #4da3ff;
       color: #fff;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 12px;
+      background: #222a45;
+      border-radius: 4px;
+      margin-bottom: 10px;
     }
 
     footer {
@@ -71,43 +106,65 @@
 
 <header>
   <h1>OPN Starter Hub</h1>
-  <p>Your starting point for exploring OPN Chain, tools, and builder resources.</p>
+  <p class="subtitle">
+    Your simple starting point for exploring OPN Chain, builder tools, faucets, and ecosystem resources.
+  </p>
 </header>
 
 <div class="container">
 
-  <div class="card">
-    <h2>🌐 What is OPN Chain?</h2>
-    <p>OPN Chain is a sovereign blockchain built for AI, identity, and real-world assets with scalable infrastructure.</p>
-  </div>
+  <div class="grid">
 
-  <div class="card">
-    <h2>⚡ Quick Links</h2>
-    <p>
-      <a href="#">Faucet</a><br>
-      <a href="#">Explorer</a><br>
-      <a href="#">Docs</a><br>
-      <a href="https://builders.iopn.tech/" target="_blank">Builder Dashboard</a>
-    </p>
-  </div>
+```
+<div class="card">
+  <span class="tag">Overview</span>
+  <h2>🌐 What is OPN Chain?</h2>
+  <p>
+    OPN Chain is a sovereign blockchain built for AI, identity, and real-world assets.
+    It focuses on scalable infrastructure and builder-first ecosystems.
+  </p>
+</div>
 
-  <div class="card">
-    <h2>🧭 How to Start</h2>
-    <p>1. Install wallet<br>
-       2. Add OPN network<br>
-       3. Use faucet<br>
-       4. Explore ecosystem</p>
-  </div>
+<div class="card">
+  <span class="tag">Quick Access</span>
+  <h2>⚡ Essential Links</h2>
+  <p>
+    <a href="#">Faucet</a><br>
+    <a href="#">Explorer</a><br>
+    <a href="#">Docs</a><br>
+    <a href="https://builders.iopn.tech/" target="_blank">Builder Dashboard</a>
+  </p>
+  <a class="btn" href="https://builders.iopn.tech/" target="_blank">Open Builder Hub</a>
+</div>
 
-  <div class="card">
-    <h2>💡 Why OPN?</h2>
-    <p>Sovereign infrastructure, AI-native systems, identity layer, and builder-first ecosystem.</p>
+<div class="card">
+  <span class="tag">Beginner Guide</span>
+  <h2>🧭 How to Start</h2>
+  <p>
+    1. Install a crypto wallet<br>
+    2. Add OPN network<br>
+    3. Use faucet for test tokens<br>
+    4. Explore ecosystem tools<br>
+    5. Start building or testing
+  </p>
+</div>
+
+<div class="card">
+  <span class="tag">Why OPN</span>
+  <h2>💡 Ecosystem Vision</h2>
+  <p>
+    Sovereign infrastructure, AI-native systems, identity layer,
+    and builder-driven ecosystem designed for real-world adoption.
+  </p>
+</div>
+```
+
   </div>
 
 </div>
 
 <footer>
-  Built by community explorer • OPN Starter Hub
+  Built by an independent explorer • OPN Starter Hub
 </footer>
 
 </body>
