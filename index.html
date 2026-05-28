@@ -2,240 +2,121 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>OPN Starter Hub</title>
+<title>IOPn Starter Hub</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root {
-  --bg: #0b0f19;
-  --card: #141a2e;
-  --text: #ffffff;
-  --muted: #b0b0b0;
-  --accent: #4da3ff;
-}
-
-body.light {
-  --bg: #f5f7ff;
-  --card: #ffffff;
-  --text: #111;
-  --muted: #444;
-  --accent: #2563eb;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  transition: 0.3s;
-  overflow-x: hidden;
+  background: #0b0f19;
+  color: #ffffff;
 }
 
-/* Animated background */
-body::before {
-  content: "";
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(77,163,255,0.15), transparent 40%);
-  animation: move 10s linear infinite;
-  z-index: -1;
-}
-
-@keyframes move {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-10%, -10%); }
-  100% { transform: translate(0,0); }
-}
-
-/* NAV */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 20px;
-  background: var(--card);
-  position: sticky;
-  top: 0;
-}
-
-.nav a {
-  color: var(--muted);
-  margin: 0 10px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.nav a:hover {
-  color: var(--accent);
-}
-
-.toggle {
-  cursor: pointer;
-  background: var(--accent);
-  padding: 6px 10px;
-  border-radius: 6px;
-  color: white;
-  border: none;
-}
-
-/* HEADER */
 header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #1a1f3c, #0b0f19);
 }
 
 h1 {
-  margin: 0;
   font-size: 42px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-  color: var(--muted);
-  max-width: 600px;
+  color: #b0b0b0;
+  max-width: 650px;
   margin: auto;
 }
 
-/* SECTIONS */
-.section {
-  display: none;
-  max-width: 1000px;
+.container {
+  max-width: 900px;
   margin: auto;
-  padding: 30px 20px;
-}
-
-.section.active {
-  display: block;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
+  padding: 40px 20px;
 }
 
 .card {
-  background: var(--card);
+  background: #141a2e;
   padding: 18px;
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  border: 1px solid #222a45;
+  margin-bottom: 15px;
 }
 
 .btn {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 12px;
-  background: var(--accent);
-  color: white;
+  background: #4da3ff;
+  color: #fff;
   border-radius: 6px;
   text-decoration: none;
 }
 
-/* BADGE */
-.badge {
-  text-align: center;
-  margin: 15px;
-  padding: 10px;
-  background: var(--card);
-  color: var(--accent);
-  border-radius: 10px;
+a {
+  color: #4da3ff;
+  text-decoration: none;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  color: var(--muted);
-  font-size: 12px;
+a:hover {
+  text-decoration: underline;
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="nav">
-  <div><b>IOPn Hub</b></div>
-  <div>
-    <a onclick="show('tools')">Tools</a>
-    <a onclick="show('about')">About</a>
-    <a onclick="show('join')">Join</a>
-  </div>
-  <button class="toggle" onclick="toggleTheme()">Theme</button>
-</div>
-
 <header>
-  <h1>OPN Starter Hub</h1>
-  <p class="subtitle">Unified entry point into OPN ecosystem — tools, DeFi, RWAs, learning & testnet.</p>
+  <h1>IOPn Starter Hub</h1>
+  <p class="subtitle">
+    Unified entry point into the IOPn ecosystem — tools, DeFi, RWAs, learning, and testnet.
+  </p>
 </header>
 
-<div class="badge">🏅 Builder Explorer • Ecosystem Contributor</div>
+<div class="container">
 
-<!-- TOOLS -->
-<div id="tools" class="section active">
-  <div class="grid">
+  <div class="card">
+    <h2>⚡ Ecosystem Tools</h2>
 
-    <div class="card">
-      Faucet
-      <a class="btn" href="https://faucet.iopn.tech/" target="_blank">Open</a>
-    </div>
-
-    <div class="card">
-      Swap
-      <a class="btn" href="https://swap.iopn.tech/" target="_blank">Trade</a>
-    </div>
-
-    <div class="card">
-      RWA
-      <a class="btn" href="https://rwa.iopn.tech/" target="_blank">Explore</a>
-    </div>
-
-    <div class="card">
-      Learn & Earn
-      <a class="btn" href="https://learn.iopn.tech/" target="_blank">Start</a>
-    </div>
-
-    <div class="card">
-      Testnet
-      <a class="btn" href="https://testnet.iopn.tech/" target="_blank">View</a>
-    </div>
-
+    <p>
+      <a href="https://faucet.iopn.tech/" target="_blank">OPN Chain Faucet</a><br>
+      <a href="https://swap.iopn.tech/" target="_blank">OPN Swap</a><br>
+      <a href="https://rwa.iopn.tech/" target="_blank">Tokenization (RWA Platform)</a><br>
+      <a href="https://learn.iopn.tech/" target="_blank">IOPn Learn</a><br>
+      <a href="https://testnet.iopn.tech/" target="_blank">OPN Testnet Explorer</a>
+    </p>
   </div>
+
+  <div class="card">
+    <h2>🌐 Ecosystem Overview</h2>
+    <p>
+      IOPn is building sovereign infrastructure for AI, identity, and real-world assets (RWA) powered by OPN Chain.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>🚀 Join Community</h2>
+    <a class="btn" href="https://discord.com/channels/1369791841020674168/1509646294761738341" target="_blank">
+      Join IOPn Discord
+    </a>
+
+    <p style="margin-top:15px;">
+      <a href="https://x.com/IOPn_io" target="_blank">Official X (IOPn_io)</a><br>
+      <a href="https://t.me/IOPn_io" target="_blank">Telegram</a><br>
+      <a href="https://linktr.ee/IOPn.io" target="_blank">Linktree</a><br>
+      <a href="https://iopn.gitbook.io/iopn" target="_blank">GitBook Docs</a><br>
+      <a href="https://medium.com/@IOPn_io" target="_blank">Medium</a><br>
+      <a href="https://origin.iopn.io/" target="_blank">Origin NFT</a>
+    </p>
+  </div>
+
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="section">
-  <p>
-    OPN Chain is building sovereign infrastructure for AI, identity, RWAs, and decentralized applications.
-  </p>
-</div>
-
-<!-- JOIN -->
-<div id="join" class="section">
-  <a class="btn" href="YOUR_DISCORD_REF_LINK_HERE" target="_blank">Join via Referral</a>
-  <p style="margin-top:15px;">
-    <a href="https://x.com/iopn" target="_blank" style="color:var(--accent)">Official X Account</a>
-  </p>
-</div>
-
-<footer>
-Built by community explorer • OPN Starter Hub
+<footer style="text-align:center; padding:30px; color:#777; font-size:12px;">
+© IOPn Starter Hub • Community Builder Project
 </footer>
-
-<script>
-function show(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-
-function toggleTheme() {
-  document.body.classList.toggle('light');
-}
-</script>
 
 </body>
 </html>
