@@ -28,25 +28,30 @@ body{
   background:var(--bg);
   color:var(--text);
   transition:0.3s;
+  overflow-x:hidden;
 }
 
-/* animated background */
+/* ===== Animated Background ===== */
 body::before{
   content:"";
   position:fixed;
   width:200%;
   height:200%;
-  background:radial-gradient(circle, rgba(77,163,255,0.15), transparent 40%);
-  animation:move 12s linear infinite;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(77,163,255,0.18), transparent 35%),
+    radial-gradient(circle at 80% 30%, rgba(124,77,255,0.15), transparent 40%),
+    radial-gradient(circle at 40% 80%, rgba(0,255,200,0.08), transparent 45%);
+  animation:floatbg 12s ease-in-out infinite;
   z-index:-1;
 }
-@keyframes move{
+
+@keyframes floatbg{
   0%{transform:translate(0,0);}
-  50%{transform:translate(-10%,-10%);}
+  50%{transform:translate(-3%, -2%);}
   100%{transform:translate(0,0);}
 }
 
-/* NAV */
+/* ===== NAV ===== */
 .nav{
   display:flex;
   justify-content:space-between;
@@ -64,9 +69,7 @@ body::before{
   text-decoration:none;
 }
 
-.nav a:hover{
-  color:var(--accent);
-}
+.nav a:hover{ color:var(--accent); }
 
 .btn-toggle{
   background:var(--accent);
@@ -77,23 +80,47 @@ body::before{
   cursor:pointer;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
   text-align:center;
   padding:60px 20px;
 }
 
-.logo{
-  font-size:14px;
-  letter-spacing:3px;
-  color:var(--accent);
+.logo-wrapper{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
   margin-bottom:10px;
 }
 
-h1{
-  margin:0;
-  font-size:42px;
+.logo-circle{
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#4da3ff,#7c4dff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  color:white;
+  animation:pulse 2.5s infinite ease-in-out;
+  box-shadow:0 0 25px rgba(77,163,255,0.4);
 }
+
+.logo-text{
+  margin-top:8px;
+  font-size:12px;
+  letter-spacing:3px;
+  color:var(--accent);
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.08);}
+  100%{transform:scale(1);}
+}
+
+h1{ margin:0; font-size:42px; }
 
 .subtitle{
   color:var(--muted);
@@ -101,7 +128,7 @@ h1{
   margin:auto;
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 .section{
   display:none;
   max-width:1000px;
@@ -109,11 +136,9 @@ h1{
   padding:30px 20px;
 }
 
-.section.active{
-  display:block;
-}
+.section.active{ display:block; }
 
-/* GRID */
+/* ===== GRID ===== */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -142,6 +167,7 @@ h1{
   text-decoration:none;
 }
 
+/* ===== FOOTER ===== */
 footer{
   text-align:center;
   padding:25px;
@@ -153,23 +179,27 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <div class="nav">
-  <div class="logo">IOPn HUB</div>
-
+  <div><b>IOPn HUB</b></div>
   <div>
     <a onclick="show('tools')">Tools</a>
     <a onclick="show('about')">About</a>
     <a onclick="show('links')">Links</a>
   </div>
-
   <button class="btn-toggle" onclick="toggleTheme()">Theme</button>
 </div>
 
+<!-- HEADER -->
 <header>
-  <div class="logo">IOPn ECOSYSTEM</div>
+  <div class="logo-wrapper">
+    <div class="logo-circle">IOPn</div>
+    <div class="logo-text">ECOSYSTEM HUB</div>
+  </div>
+
   <h1>Starter Hub</h1>
   <p class="subtitle">
-    Unified access point to IOPn ecosystem tools, learning, DeFi, RWAs and builder infrastructure.
+    Unified entry point into IOPn ecosystem — tools, DeFi, RWAs, learning & testnet.
   </p>
 </header>
 
@@ -207,8 +237,8 @@ footer{
 <!-- ABOUT -->
 <div id="about" class="section">
   <h2>About IOPn</h2>
-  <p style="color:var(--muted);line-height:1.6;">
-    IOPn is building sovereign infrastructure for AI-native systems, identity, and real-world assets (RWA).
+  <p style="color:var(--muted); line-height:1.6;">
+    IOPn is building sovereign infrastructure for AI-native systems, identity, and real-world assets (RWA).  
     The ecosystem enables verifiable, modular, and scalable on-chain applications powered by OPN Chain.
   </p>
 </div>
@@ -221,7 +251,7 @@ footer{
       <a class="btn" href="https://discord.com/channels/1369791841020674168/1509646294761738341" target="_blank">Open</a>
     </div>
 
-    <div class="card">X (Twitter)<br>
+    <div class="card">X (Official)<br>
       <a class="btn" href="https://x.com/IOPn_io" target="_blank">Open</a>
     </div>
 
@@ -244,6 +274,7 @@ footer{
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
 Built by community explorer • IOPn Starter Hub
 </footer>
