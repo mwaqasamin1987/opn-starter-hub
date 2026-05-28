@@ -1,113 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>OPN Starter Hub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>OPN Starter Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0f19;
-      color: #ffffff;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f19;
+  color: #ffffff;
+}
 
-    header {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #1a1f3c, #0b0f19);
-    }
+header {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #1a1f3c, #0b0f19);
+}
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+.logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #4da3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #000;
+  font-size: 16px;
+}
 
-    .subtitle {
-      color: #b0b0b0;
-      font-size: 16px;
-      max-width: 600px;
-      margin: auto;
-    }
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
+.subtitle {
+  color: #b0b0b0;
+  font-size: 16px;
+  max-width: 650px;
+  margin: auto;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
 
-    .card {
-      background: #141a2e;
-      padding: 20px;
-      border-radius: 12px;
-      border: 1px solid #222a45;
-      transition: 0.3s;
-    }
+.grid {
+  display: grid;
+  gap: 15px;
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-      border-color: #4da3ff;
-    }
+.card {
+  background: #141a2e;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #222a45;
+  transition: 0.3s;
+}
 
-    h2 {
-      margin-top: 0;
-      color: #ffffff;
-    }
+.card:hover {
+  transform: translateY(-3px);
+  border-color: #4da3ff;
+}
 
-    p {
-      color: #b0b0b0;
-      font-size: 14px;
-      line-height: 1.5;
-    }
+h2 {
+  margin-top: 0;
+}
 
-    a {
-      color: #4da3ff;
-      text-decoration: none;
-    }
+p {
+  color: #b0b0b0;
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+a {
+  color: #4da3ff;
+  text-decoration: none;
+}
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 14px;
-      background: #4da3ff;
-      color: #fff;
-      border-radius: 6px;
-      font-size: 13px;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
-    .tag {
-      display: inline-block;
-      padding: 4px 8px;
-      font-size: 12px;
-      background: #222a45;
-      border-radius: 4px;
-      margin-bottom: 10px;
-    }
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: #4da3ff;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 13px;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
-      font-size: 12px;
-    }
-  </style>
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #222a45;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  font-size: 12px;
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
+  <div class="logo">IOPn</div>
+
   <h1>OPN Starter Hub</h1>
+
   <p class="subtitle">
     Your simple starting point for exploring OPN Chain, builder tools, faucets, docs, and ecosystem resources.
   </p>
@@ -122,7 +138,7 @@
       <h2>🌐 What is OPN Chain?</h2>
       <p>
         OPN Chain is a sovereign blockchain built for AI, identity, and real-world assets.
-        It focuses on scalable infrastructure and builder-first ecosystems.
+        It provides scalable infrastructure for builders and applications.
       </p>
     </div>
 
@@ -130,9 +146,9 @@
       <span class="tag">Quick Access</span>
       <h2>⚡ Essential Links</h2>
       <p>
-        <a href="https://faucet.example.com" target="_blank">Faucet</a><br>
+        <a href="https://faucet.iopn.tech/" target="_blank">Faucet</a><br>
         <a href="https://explorer.iopn.io/" target="_blank">Explorer</a><br>
-        <a href="https://iopn.gitbook.io/iopn/" target="_blank">Docs</a><br>
+        <a href="https://iopn.io/" target="_blank">Official Website</a><br>
         <a href="https://builders.iopn.tech/" target="_blank">Builder Dashboard</a>
       </p>
 
@@ -143,11 +159,11 @@
       <span class="tag">Beginner Guide</span>
       <h2>🧭 How to Start</h2>
       <p>
-        1. Install a wallet<br>
+        1. Install wallet<br>
         2. Add OPN network<br>
         3. Use faucet for test tokens<br>
         4. Explore ecosystem tools<br>
-        5. Start building or testing
+        5. Start building or contributing
       </p>
     </div>
 
