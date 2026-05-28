@@ -28,10 +28,9 @@ body{
   background:var(--bg);
   color:var(--text);
   transition:0.3s;
-  overflow-x:hidden;
 }
 
-/* ANIMATION BG */
+/* animated background */
 body::before{
   content:"";
   position:fixed;
@@ -41,7 +40,6 @@ body::before{
   animation:move 12s linear infinite;
   z-index:-1;
 }
-
 @keyframes move{
   0%{transform:translate(0,0);}
   50%{transform:translate(-10%,-10%);}
@@ -53,17 +51,16 @@ body::before{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:12px 20px;
+  padding:15px 20px;
   background:var(--card);
   position:sticky;
   top:0;
-  z-index:10;
 }
 
 .nav a{
   margin:0 10px;
-  cursor:pointer;
   color:var(--muted);
+  cursor:pointer;
   text-decoration:none;
 }
 
@@ -71,13 +68,13 @@ body::before{
   color:var(--accent);
 }
 
-.btn{
+.btn-toggle{
   background:var(--accent);
+  border:none;
   color:#fff;
-  padding:8px 10px;
+  padding:6px 10px;
   border-radius:6px;
   cursor:pointer;
-  border:none;
 }
 
 /* HEADER */
@@ -86,7 +83,17 @@ header{
   padding:60px 20px;
 }
 
-h1{margin:0;font-size:42px;}
+.logo{
+  font-size:14px;
+  letter-spacing:3px;
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+h1{
+  margin:0;
+  font-size:42px;
+}
 
 .subtitle{
   color:var(--muted);
@@ -125,18 +132,7 @@ h1{margin:0;font-size:42px;}
   transform:translateY(-5px);
 }
 
-/* BADGE */
-.badge{
-  text-align:center;
-  margin:15px;
-  padding:10px;
-  background:var(--card);
-  color:var(--accent);
-  border-radius:10px;
-}
-
-/* BUTTON */
-a.btnlink{
+.btn{
   display:inline-block;
   margin-top:10px;
   padding:10px 12px;
@@ -148,7 +144,7 @@ a.btnlink{
 
 footer{
   text-align:center;
-  padding:20px;
+  padding:25px;
   color:var(--muted);
   font-size:12px;
 }
@@ -157,9 +153,8 @@ footer{
 
 <body>
 
-<!-- NAV -->
 <div class="nav">
-  <div><b>IOPn Hub</b></div>
+  <div class="logo">IOPn HUB</div>
 
   <div>
     <a onclick="show('tools')">Tools</a>
@@ -167,45 +162,43 @@ footer{
     <a onclick="show('links')">Links</a>
   </div>
 
-  <button class="btn" onclick="toggleTheme()">Theme</button>
+  <button class="btn-toggle" onclick="toggleTheme()">Theme</button>
 </div>
 
-<!-- HEADER -->
 <header>
-  <h1>IOPn Starter Hub</h1>
+  <div class="logo">IOPn ECOSYSTEM</div>
+  <h1>Starter Hub</h1>
   <p class="subtitle">
-    Unified entry point into IOPn ecosystem — tools, DeFi, RWAs, learning, testnet & builder infra.
+    Unified access point to IOPn ecosystem tools, learning, DeFi, RWAs and builder infrastructure.
   </p>
 </header>
-
-<div class="badge">🏅 Builder Explorer • Ecosystem Contributor</div>
 
 <!-- TOOLS -->
 <div id="tools" class="section active">
   <div class="grid">
 
-    <div class="card">Faucet <br>
-      <a class="btnlink" href="https://faucet.iopn.tech/" target="_blank">Open</a>
+    <div class="card">Faucet<br>
+      <a class="btn" href="https://faucet.iopn.tech/" target="_blank">Open</a>
     </div>
 
-    <div class="card">Swap <br>
-      <a class="btnlink" href="https://swap.iopn.tech/" target="_blank">Trade</a>
+    <div class="card">Swap<br>
+      <a class="btn" href="https://swap.iopn.tech/" target="_blank">Trade</a>
     </div>
 
-    <div class="card">RWA <br>
-      <a class="btnlink" href="https://rwa.iopn.tech/" target="_blank">Explore</a>
+    <div class="card">RWA<br>
+      <a class="btn" href="https://rwa.iopn.tech/" target="_blank">Explore</a>
     </div>
 
-    <div class="card">Learn & Earn <br>
-      <a class="btnlink" href="https://learn.iopn.tech/" target="_blank">Start</a>
+    <div class="card">Learn & Earn<br>
+      <a class="btn" href="https://learn.iopn.tech/" target="_blank">Start</a>
     </div>
 
-    <div class="card">Explorer <br>
-      <a class="btnlink" href="https://testnet.iopn.tech/" target="_blank">View</a>
+    <div class="card">Explorer<br>
+      <a class="btn" href="https://testnet.iopn.tech/" target="_blank">View</a>
     </div>
 
-    <div class="card">Builder Dashboard <br>
-      <a class="btnlink" href="https://builders.iopn.tech/" target="_blank">Build</a>
+    <div class="card">Builder Dashboard<br>
+      <a class="btn" href="https://builders.iopn.tech/" target="_blank">Build</a>
     </div>
 
   </div>
@@ -214,32 +207,41 @@ footer{
 <!-- ABOUT -->
 <div id="about" class="section">
   <h2>About IOPn</h2>
-  <p>
-    IOPn is building sovereign infrastructure for AI, identity, and real-world assets (RWA) on OPN Chain.
-    The ecosystem focuses on verifiable systems, decentralized participation, and builder-driven growth.
-  </p>
-
-  <h3>Official Links</h3>
-  <p>
-    Origin NFT: https://origin.iopn.io/ <br>
-    X: https://x.com/IOPn_io <br>
-    Telegram: https://t.me/IOPn_io <br>
-    GitBook: https://iopn.gitbook.io/iopn <br>
-    Medium: https://medium.com/@IOPn_io <br>
+  <p style="color:var(--muted);line-height:1.6;">
+    IOPn is building sovereign infrastructure for AI-native systems, identity, and real-world assets (RWA).
+    The ecosystem enables verifiable, modular, and scalable on-chain applications powered by OPN Chain.
   </p>
 </div>
 
 <!-- LINKS -->
 <div id="links" class="section">
-  <h2>Join Ecosystem</h2>
+  <div class="grid">
 
-  <a class="btnlink" href="https://discord.com/channels/1369791841020674168/1509646294761738341" target="_blank">
-    Join Discord
-  </a>
+    <div class="card">Discord<br>
+      <a class="btn" href="https://discord.com/channels/1369791841020674168/1509646294761738341" target="_blank">Open</a>
+    </div>
 
-  <p style="margin-top:15px;">
-    Official X: <a href="https://x.com/IOPn_io" target="_blank" style="color:var(--accent)">IOPn_io</a>
-  </p>
+    <div class="card">X (Twitter)<br>
+      <a class="btn" href="https://x.com/IOPn_io" target="_blank">Open</a>
+    </div>
+
+    <div class="card">Telegram<br>
+      <a class="btn" href="https://t.me/IOPn_io" target="_blank">Open</a>
+    </div>
+
+    <div class="card">GitBook<br>
+      <a class="btn" href="https://iopn.gitbook.io/iopn" target="_blank">Docs</a>
+    </div>
+
+    <div class="card">Medium<br>
+      <a class="btn" href="https://medium.com/@IOPn_io" target="_blank">Read</a>
+    </div>
+
+    <div class="card">Origin NFT<br>
+      <a class="btn" href="https://origin.iopn.io/" target="_blank">View</a>
+    </div>
+
+  </div>
 </div>
 
 <footer>
